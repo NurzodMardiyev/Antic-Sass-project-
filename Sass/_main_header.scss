@@ -1,0 +1,193 @@
+#header {
+  max-width: 1440px;
+  margin: auto;
+  background-image: url(../images/header\ bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: right;
+}
+.logo {
+  z-index: 9999;
+}
+.navbar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 32px;
+  margin: 55px auto 110px;
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    a {
+      @include text(#706458, "Varta", 18px, 400, 25px);
+    }
+  }
+}
+
+.header__info {
+  max-width: 420px;
+  span {
+    @include text(#a06056, "Varta", 14px, 700, 20px);
+    margin-bottom: 50px;
+    display: inline-block;
+    letter-spacing: 1px;
+  }
+  h1 {
+    @include text(#a06056, "Merriweather", 50px, 300, 70px);
+    letter-spacing: -0.4px;
+    margin-bottom: 30px;
+  }
+  p {
+    @include text(rgba(112, 100, 88, 0.9), "Varta", 22px, 300, 30.8px);
+    margin-bottom: 48px;
+  }
+  a {
+    margin-bottom: 150px;
+    display: inline-block;
+  }
+}
+#burger {
+  visibility: hidden;
+}
+
+#burger__menu {
+  z-index: 9999;
+  display: none; // Flex
+  flex-direction: column;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  justify-content: space-between;
+  span {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #header {
+    background-image: url(../images/header\ bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .logo {
+    img {
+      filter: brightness(30);
+    }
+  }
+  .nav__menu {
+    ul {
+      a {
+        @include text(#fff, "Varta", 18px, 400, 25px);
+      }
+    }
+  }
+
+  .header__info {
+    span {
+      @include text(#fff, "Varta", 14px, 700, 20px);
+    }
+    h1 {
+      @include text(#fff, "Merriweather", 50px, 300, 70px);
+    }
+    p {
+      @include text(#fff, "Varta", 22px, 300, 30.8px);
+    }
+    a {
+      img {
+        filter: brightness(30);
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  #header {
+    background-image: url(../images/header\ bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .logo {
+    img {
+      filter: brightness(30);
+    }
+  }
+  .navbar {
+    justify-content: space-between;
+  }
+  #burger__menu {
+    display: flex;
+  }
+  #burger:checked ~ .nav__menu {
+    display: flex;
+    background-color: rgba(10, 10, 10, 0.842);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  #burger:checked ~ #burger__menu {
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease;
+    span:first-child {
+      transform: rotate(45deg);
+    }
+    span:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+  .nav__menu {
+    display: flex;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.3s ease;
+    flex-direction: column;
+    z-index: 99;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 205px 0;
+
+    ul {
+      flex-direction: column;
+      margin-bottom: 30px;
+      a {
+        @include text(#fff, "Varta", 18px, 400, 25px);
+      }
+    }
+  }
+
+  .header__info {
+    text-align: center;
+    span {
+      @include text(#fff, "Varta", 14px, 700, 20px);
+      margin-bottom: 24px;
+    }
+    h1 {
+      @include text(#fff, "Merriweather", 35px, 300, 40px);
+      margin-bottom: 24px;
+    }
+    p {
+      @include text(#fff, "Varta", 18px, 300, 25px);
+      margin-bottom: 24px;
+    }
+    a {
+      img {
+        filter: brightness(30);
+      }
+    }
+  }
+}

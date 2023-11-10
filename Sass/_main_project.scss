@@ -1,0 +1,76 @@
+.project {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 128px;
+  gap: 64px;
+}
+.project__head {
+  max-width: 458px;
+
+  h1 {
+    @include text(#706458, "Merriweather", 55px, 300, 60px);
+    letter-spacing: -0.6px;
+    margin-bottom: 30px;
+  }
+  a {
+    @include text(#a06056, "Merriweather", 17px, 700, 25px);
+    letter-spacing: 0.3px;
+  }
+}
+.project__body {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: column;
+  gap: 30px;
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.project__info {
+  max-width: 258px;
+
+  h3 {
+    @include text(#a06056, "Varta", 25px, 600, 30px);
+    letter-spacing: -0.2px;
+    margin-bottom: 12px;
+  }
+  p {
+    @include text(rgba(112, 100, 88, 0.9), "Varta", 18px, 400, 25px);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .project {
+    flex-direction: column;
+  }
+  .project__head {
+    max-width: 658px;
+  }
+  .project__body {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .project {
+    flex-direction: column;
+  }
+  .project__head {
+    max-width: 658px;
+  }
+  .project__body {
+    width: 100%;
+    & > div {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+  .project__head {
+    h1 {
+      @include text(#706458, "Merriweather", 35px, 300, 40px);
+      letter-spacing: -0.3px;
+      margin-bottom: 30px;
+    }
+  }
+}

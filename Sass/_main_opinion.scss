@@ -1,0 +1,105 @@
+.main {
+  max-width: 1440px;
+  margin: auto;
+}
+.opinion {
+  margin-top: 64px;
+}
+.opinion__tittle {
+  h1 {
+    @include text(#706458, "Merriweather", 50px, 300, 70px);
+    letter-spacing: -0.4px;
+    margin-bottom: 30px;
+  }
+}
+.opinion__content {
+  display: flex;
+  gap: 32px;
+  & p {
+    @include text(rgba(112, 100, 88, 0.9), "Varta", 18px, 400, 25px);
+    max-width: 165px;
+  }
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  & > div {
+    display: flex;
+    gap: 32px;
+  }
+
+  & > div::after {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    @include text(#a06056, "Merriweather", 50px, 300, 70px);
+    top: calc(40%);
+    margin-left: 130px;
+  }
+  & > div:first-child::after {
+    content: "Bedroom";
+  }
+  & > div:last-child::after {
+    content: "Living room";
+  }
+}
+.slider__btn {
+  display: flex;
+  margin-top: 48px;
+  gap: 64px;
+  .sl {
+    display: inline-block;
+    width: 165px;
+    @include text(rgba(112, 100, 88, 0.9), "Varta", 18px, 400, 25px);
+  }
+  .ml {
+    display: inline-block;
+    width: 100%;
+    @include text(rgba(87, 77, 67, 0.9), "Varta", 20px, 700, 25px);
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .opinion__content {
+    flex-direction: column;
+    & p {
+      @include text(rgba(112, 100, 88, 0.9), "Varta", 18px, 400, 25px);
+      max-width: 265px;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .content {
+    div {
+      width: 311px;
+      img {
+        width: 50%;
+      }
+    }
+    div:last-child {
+      display: none;
+    }
+    & > div::after {
+      @include text(#a06056, "Merriweather", 35px, 300, 40px);
+      margin-left: 100px;
+    }
+  }
+  .opinion__content {
+    flex-direction: column;
+    & p {
+      @include text(rgba(112, 100, 88, 0.9), "Varta", 16px, 400, 25px);
+      max-width: 265px;
+    }
+  }
+  .opinion__tittle {
+    h1 {
+      @include text(#706458, "Merriweather", 35px, 300, 40px);
+      letter-spacing: -0.3px;
+      margin-bottom: 30px;
+    }
+  }
+}

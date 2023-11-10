@@ -1,0 +1,9 @@
+@mixin text ($color, $fontFamily, $fontSize, $fontWeight, $lineHeight) {
+  color: $color;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: $fontFamily, sans-serif;
+  font-size: $fontSize;
+  font-style: normal;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+}
